@@ -27,6 +27,7 @@ body, p {
   width: 90%;
   height: fit-content;
   vertical-align: middle;
+  z-index: 10;
 }
 
 
@@ -94,6 +95,7 @@ a, a:link, a:visited {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .footer {
@@ -115,3 +117,32 @@ a, a:link, a:visited {
   float: right;
 }
 
+.main-container {
+  z-index: 1;
+  position: absolute;
+  top: 500px;
+  width: 100%;
+}
+
+.effect-container {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.sampleImg {
+  width: 200px;
+}
+
+break {
+  flex-basis: 100%;
+  width: 0px; 
+  height: 0px; 
+  overflow: hidden;
+  display: inline-block; 
+}
