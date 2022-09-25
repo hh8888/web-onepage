@@ -19,6 +19,9 @@ body, p {
   transform: scale(1);
 }
 
+.title {
+  sfont-size:10vw;
+}
 
 .navBar {
   display: inline-block;
@@ -61,14 +64,14 @@ body, p {
 }
 
 .logo {
-  font-family: 'Aria', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 .header {
   margin: 0px 50px;
 }
 
-a, a:link, a:visited {
+a, a:link, a:visited {s
   color:black;
   text-decoration: none;
 }
@@ -136,7 +139,7 @@ a, a:link, a:visited {
 }
 
 .sampleImg {
-  width: 200px;
+  width: 20vw;
 }
 
 break {
