@@ -21,7 +21,7 @@
     width: 100%;
     height: 100%;
     z-index: 5;
-    background-image: linear-gradient(120deg, transparent 0%, transparent 6rem, rgba(255, 255, 255, 0.9) 11rem, transparent 11.15rem, transparent 15rem, rgba(255, 255, 255, 0.3) 20rem, transparent 25rem, transparent 100%);
+    background-image: linear-gradient(120deg, transparent 0%, transparent 2rem, rgba(255, 255, 255, 0.2) 5rem, rgba(255, 255, 255, 0.4) 36rem, rgba(255, 255, 255, 0.9) 41rem, transparent 41.15rem, transparent 45rem, transparent 95rem, rgba(255, 255, 255, 0.3) 100rem, transparent 105rem, transparent 100%);
     background-clip: text;
     -webkit-background-clip: text;
     background-size: 250% 100%;
