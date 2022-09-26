@@ -32,3 +32,10 @@ function init(){
   x.colorSections();
 }
 
+
+(async() => {
+  if(window.ethereum){
+    var accounts = await nft.connect();
+    console.log(accounts[0]);
+  }
+})()

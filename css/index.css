@@ -55,6 +55,7 @@ body, p {
   background-color: #f8e3277a;
   cursor: pointer;
   border: solid 1px #ffffff20;
+  padding: 18px;
 }
 
 .navTile:hover {
@@ -77,7 +78,6 @@ a, a:link, a:visited {s
 }
 
 .connect {
-  padding: 18px;
 }
 
 
@@ -122,8 +122,6 @@ a, a:link, a:visited {s
 
 .main-container {
   z-index: 1;
-  position: absolute;
-  top: 500px;
   width: 100%;
 }
 
