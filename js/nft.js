@@ -1,4 +1,7 @@
-
+/*
+Pure vanilla Javascript NFT solution
+Author:hh8888
+*/
 
 var nft={};
 nft.account=null;
@@ -32,22 +35,3 @@ nft.mint = function(){
         x.get('button.mint').innerText = 'Mint';
     })
 }
-
-// nft.checkMintResult = function(){
-//     let checkTx = setInterval(async function () {
-//         const tx = await web3.eth.getTransactionReceipt(mintClaim)
-//         if (tx) {
-//             clearInterval(checkTx)
-//             document.getElementById("mintNowButton").innerText = "Minting successful";
-//             document.getElementById("totalMintedSpan").innerHTML = await contract.methods.totalSupply().call();
-  
-//             setTimeout(function() {
-//               document.getElementById("mintNowButton").innerText = "Mint now";
-//             }, 5000);
-  
-//             return {
-//               success: true
-//             }
-//         }
-//     }, 10 * 1000) // This is from a tutorial, not sure if I need it?
-// }

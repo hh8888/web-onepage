@@ -1,4 +1,9 @@
-var Xutil,x; Xutil=x={};
+/*
+Pure vanilla Javascript Utility solution
+Author:hh8888
+*/
+
+var xutil,x; xutil=x={};
 
 x.get = function(name){return document.querySelector(name)};
 x.getAll = function(name){return document.querySelectorAll(name)};

@@ -1,36 +1,8 @@
-// document.addEventListener('DOMContentLoaded', initFP);
+/*
+Pure vanilla Javascript NFT solution
+Author:hh8888
+*/
 
-// function initFP() {
-//   // 添加交互动画,不能使用箭头函数，要引用实例中的 this
-//   const addAnimation = function() {
-//     // i 表示每次滑动将要进入的页面的索引，可以通过 this.pages[i] 获取当前页面
-//     // 取得将要进入页面后便可以做进一步操作，比如，添加动画
-//     const i = -(this.currentPosition / this.viewHeight);
-
-//     // 为将要进入页面添加动画
-//     document.querySelector('.fade-in').classList.remove('fade-in');
-//     this.pages[i].querySelector('p').classList.add('fade-in');
-//   };
-
-//   // 创建全屏滚动实例，传入动画回调函数，并初始化
-//   new PureFullPage({
-//     definePages: addAnimation,
-//   });
-// }
-
-// window.addEventListener('load', function () {
-//   document.querySelector('p').classList.add('fade-in');
-// });
-
-window.addEventListener('DOMContentLoaded', function () {
-  init();
-});
-
-function init(){
-  // var hash = window.location.hash.substr(1);
-  x.handleChangePage(1);
-  x.colorSections();
-}
 
 
 (async() => {
@@ -38,4 +10,32 @@ function init(){
     var accounts = await nft.connect();
     console.log(accounts[0]);
   }
-})()
+})();
+
+function initSLider(){
+  var slider = tns({
+    container: '#slider',
+    items: 3,
+    mouseDrag: true,
+    // gutter: 0,
+    // controls: true,
+    navPosition: 'bottom',
+    autoplay: true,
+    autoplayTimeout: 3500,
+    autoplayHoverPause: true,
+    rewind: true,
+    loop: false,
+    controlsText: ['<span class="fas fa-chevron-circle-left"></span>', '<span class="fas fa-chevron-circle-right"></span>']
+  })
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  init();
+  initSLider();
+});
+
+function init(){
+  // var hash = window.location.hash.substr(1);
+  x.handleChangePage(1);
+  x.colorSections('.effect-container');
+}

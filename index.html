@@ -10,93 +10,114 @@
   <link rel="stylesheet" href="./css/shine.css">
   <link rel="stylesheet" href="./css/transition.css">
   <link rel="stylesheet" href="./css/index.css">
-  <script src="./js/web3.min.js"></script>
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <link rel="stylesheet" href="./js/lib/tiny-slider.css">
+  <script src="./js/lib/tiny-slider.js"></script>
   <script src="https://unpkg.com/css-doodle@0.17.2/css-doodle.min.js"></script>
-  <script src="./js/Xutil.js"></script>
+  <script src="./js/lib/web3.min.js"></script>
+  <script src="./js/xutil.js"></script>
   <script src="./js/nft.js"></script>
   <script src="./js/index.js"></script>
 </head>
 
 <body>
+  <div class="effect-container">
+    <css-doodle>
+      <style>
+        @grid: 50x1 / 50vmin;
+        :container {
+          perspective: 23vmin;
+        }
+        background: @m(
+          @r(50, 100), 
+          radial-gradient(
+            @p(#00b8a9, #f8f3d4, #f6416c, #ffde7d) 5%,
+            transparent 50%
+          ) @r(100%) @r(100%) / @r(1%, 3%) @lr no-repeat
+        );
+    
+        @size: 50%;
+        @place-cell: center;
+    
+        border-radius: 50%;
+        transform-style: preserve-3d;
+        animation: scale-up 30s linear infinite;
+        animation-delay: calc(@i * -.7s);
+    
+        @keyframes scale-up {
+          0% {
+            opacity: 0;
+            transform: translate3d(0, 0, 0) rotate(0);
+          }
+          10% { 
+            opacity: 0.5; 
+          }
+          95% {
+            transform:
+              translate3d(0, 0, @r(50vmin, 55vmin))
+              rotate(@r(-360deg, 360deg));
+          }
+          100% {
+            opacity: 0;
+            transform: translate3d(0, 0, 1vmin);
+          }
+        }
+      </style>
+    </css-doodle>
+  </div>
+
   <div class="header">
     <div class="navBar logo">
       <h1 class="shine title" data-text="Super Zodiac">Super Zodiac</h1>
       <button class="connect button pull-right" onclick="nft.connect()">Connect Wallet</button>
     </div>
   </div>
-  <!-- <div id="pureFullPage">
-  <div class="page">
-    <p>Page 1</p>
-  </div>
-  <div class="page">
-    <p>Page 2</p>
-  </div>
-  <div class="page">
-    <p>Page 3</p>
-  </div>
-  </div> -->
-  <div class="effect-container">
-        <css-doodle>
-          <style>
-            @grid: 50x1 / 50vmin;
-            :container {
-              perspective: 23vmin;
-            }
-            background: @m(
-              @r(50, 100), 
-              radial-gradient(
-                @p(#00b8a9, #f8f3d4, #f6416c, #ffde7d) 5%,
-                transparent 50%
-              ) @r(100%) @r(100%) / @r(1%, 3%) @lr no-repeat
-            );
-        
-            @size: 50%;
-            @place-cell: center;
-        
-            border-radius: 50%;
-            transform-style: preserve-3d;
-            animation: scale-up 30s linear infinite;
-            animation-delay: calc(@i * -.7s);
-        
-            @keyframes scale-up {
-              0% {
-                opacity: 0;
-                transform: translate3d(0, 0, 0) rotate(0);
-              }
-              10% { 
-                opacity: 0.5; 
-              }
-              95% {
-                transform:
-                  translate3d(0, 0, @r(50vmin, 55vmin))
-                  rotate(@r(-360deg, 360deg));
-              }
-              100% {
-                opacity: 0;
-                transform: translate3d(0, 0, 1vmin);
-              }
-            }
-          </style>
-        </css-doodle>
-        
-      </div>
+ 
   <div id="page1" class="hide">
     <div class="section centerContainer" id="1.1">
       
-      <button class="mint button hide" onclick="nft.mint()">Mint</button>
-      
+      <div class="mint">
+        <button class="mint button hide" onclick="nft.mint()">Mint</button>
+      </div>
       <div class="main-container centerContainer">
-      <div class="">Sample:</div>
-      <break></break>
-      <div class="imgs">
-        <img src="./img/001.jpg" alt="" class="sampleImg">
-        <img src="./img/001.jpg" alt="" class="sampleImg">
-        <img src="./img/001.jpg" alt="" class="sampleImg">
+
+        <div class="subHeader">Sample:</div>
+        <div class="itemBig">
+          <img src="./img/001.jpg" alt="" class="sampleImgBig">
+        </div>
+        <break></break>
+        
+
+        <div class="gallery centerContainer" id="slider-container">
+          <div class="" id="slider">
+            <div class="item">
+                <img src="./img/001.jpg" alt="" class="sampleImg">
+            </div>
+            <div class="item">
+                <img src="./img/001.jpg" alt="" class="sampleImg">
+            </div>
+            <div class="item">
+                <img src="./img/001.jpg" alt="" class="sampleImg">
+            </div>
+            <div class="item">
+                <img src="./img/001.jpg" alt="" class="sampleImg">
+            </div>
+            <div class="item">
+                <img src="./img/001.jpg" alt="" class="sampleImg">
+            </div>
+            <div class="item">
+                <img src="./img/001.jpg" alt="" class="sampleImg">
+            </div>
+            <div class="item">
+                <img src="./img/001.jpg" alt="" class="sampleImg">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  
 
   <div class="footer">
     <div class="wrapper">
@@ -104,7 +125,6 @@
     </div>
   </div>
 
-  <!-- <script src="../../dist/pureFullPage.min.js"></script> -->
 </body>
 
 </html>
