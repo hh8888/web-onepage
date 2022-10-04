@@ -19,14 +19,15 @@ nft.connect = async function(){
         x.get('button.connect').innerText = accounts[0];
         x.show(x.get('button.mint'));
         nft.account = accounts[0];
+        nft.contract = new web3.eth.Contract(nft.ABI, nft.contractAddress);
+        nft.initEl();
     }
     return accounts;
 }
 
 nft.mint = function(){
     x.get('button.mint').innerText = 'Minting...';
-    var contract = new web3.eth.Contract(nft.ABI, nft.contractAddress);
-    contract.methods.mintNFTs(1).send({from:nft.account, value:nft.mintPrice})
+    nft.contract.methods.mintNFTs(1).send({from:nft.account, value:nft.mintPrice})
     .then(function(receipt){
         console.log(receipt);
         x.get('button.mint').innerText = 'Minted!';
@@ -34,4 +35,15 @@ nft.mint = function(){
     .catch(function(e){
         x.get('button.mint').innerText = 'Mint';
     })
+}
+
+nft.getValue = async function(name){
+    var rt;
+    await nft.contract.methods[name].call(this).call().then(a=>rt=a);
+    return rt;
+}
+
+nft.initEl = async function(){
+    x.get('.totalSupply').innerText = await nft.getValue('totalSupply');
+    x.get('.minted').innerText = await nft.getValue('minted');
 }

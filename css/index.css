@@ -205,7 +205,7 @@ button[data-action="start"], button[data-action="stop"]{
   padding: 0 1em;
   height: 2.5em;
   color: #000;
-  background: rgba(200,200,200,0.7);
+  /* background: rgba(200,200,200,0.7); */
   border-radius: 3px;
   border: 0;
 }
